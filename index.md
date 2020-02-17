@@ -33,7 +33,8 @@ The characteristics of the reach and the boundary conditions are identical to th
 
 The benchmark problem is single-objective.  The objective is to keep the up- and downstream water levels as close as possible to a reference water level of 0 m above datum.
 
-In order to make a fair comparison, GPU acceleration features of RTO / Gorilla were disabled for this benchmark.
+In order to make a fair comparison, GPU acceleration features of RTO / Gorilla were disabled.  The hardware used
+was a 2015 Apple MacBook Pro with 2.9 GHz Dual-Core Intel Core i5 and 16 GB of RAM.
 
 ### Results
 

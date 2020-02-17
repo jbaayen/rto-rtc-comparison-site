@@ -36,12 +36,14 @@ We consider a single river reach, with a fixed upstream inflow boundary conditio
 
 The characteristics of the reach and the boundary conditions are identical to those in a [previous benchmark](https://publicwiki.deltares.nl/download/attachments/138543226/Baayen_2019-09-13%20Comparison%20Optimization%20Methods.pdf?version=1&modificationDate=1571401624947&api=v2).
 
+The benchmark problem is single-objective.  The objective is to keep the up- and downstream water levels as close as possible to a reference water level of 0 m above datum.
+
 In order to make a fair comparison, GPU acceleration features of RTO / Gorilla were disabled for this benchmark.
 
 ### Results
 
 If we plot objective function values against the number of water level discretization points, 
-we see straight away that RTC-Tools 2.3.2 does *not* find global optima:
+we see straight away that RTC-Tools 2.3.2 does *not* find global optima (lower values are better):
 
 ![alt text](images/perf.svg "Performance")
 

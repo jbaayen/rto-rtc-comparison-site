@@ -1,9 +1,9 @@
 # KISTERS RTO versus RTC-Tools 2:  A simple benchmark
 ## by Ties van der Heijden (HKV, TU Delft) and Jorn Baayen (KISTERS)
 
-<img src="images/TUDelft.svg" height="30px">
+<a href="https://tudelft.nl"><img src="images/TUDelft.svg" height="35"></a>
 &nbsp;&nbsp;
-<img src="images/KISTERS.svg" height="15px">
+<a href="https://water.kisters.de/en"><img src="images/KISTERS.svg" height="20"></a>
 
 ### Introduction
 
@@ -32,7 +32,9 @@ solutions:
 
 We consider a single river reach, with a fixed upstream inflow boundary condition, and an adjustable downstream boundary condition.  The single river reach is discretized using *n* level nodes.  The number of level nodes is varied on a binary scale between 16 and 256 in this benchmark.
 
+<div align="center">
 <img src="images/grid.png" height="100px">
+</div>
 
 The characteristics of the reach and the boundary conditions are identical to those in a [previous benchmark](https://publicwiki.deltares.nl/download/attachments/138543226/Baayen_2019-09-13%20Comparison%20Optimization%20Methods.pdf?version=1&modificationDate=1571401624947&api=v2).
 
@@ -45,14 +47,18 @@ In order to make a fair comparison, GPU acceleration features of RTO / Gorilla w
 If we plot objective function values against the number of water level discretization points, 
 we see straight away that RTC-Tools 2.3.2 does *not* find global optima (lower values are better):
 
-![alt text](images/perf.svg "Performance")
+<div align="center">
+<img src="images/perf.svg">
+</div>
 
 This most likely due to the fact that the RTC-Tools Channel Flow [shallow water discretization](https://gitlab.com/deltares/rtc-tools-channel-flow/-/blob/29906a7f7eb76edabd8d3d9b068374dc0de84a55/src/rtctools_channel_flow/modelica/Deltares/ChannelFlow/Hydraulic/Branches/Internal/PartialHomotopic.mo) is not synchronized with the [theory](https://arxiv.org/abs/1801.06507).
 Because of this, constraints may become linearly dependent, at which point regularization heuristics are activated in [IPOPT](https://github.com/coin-or/Ipopt).
 
 Secondly, we note that RTO consistently outperforms RTC-Tools 2 in terms of computation time:
 
-![alt text](images/wall_time.svg "Performance")
+<div align="center">
+<img src="images/wall_time.svg">
+</div>
 
 For realistic problems, RTO is more than **10 times faster**  than RTC-Tools 2 (note the logarithmic plot axes).   This large difference is mostly due to the use of the KISTERS Gorilla non-convex optimization solver.
 

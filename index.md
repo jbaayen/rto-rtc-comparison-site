@@ -1,4 +1,3 @@
-# KISTERS RTO versus RTC-Tools 2:  A simple benchmark
 ## by Ties van der Heijden (HKV, TU Delft) and Jorn Baayen (KISTERS)
 
 <a href="https://tudelft.nl"><img src="images/TUDelft.svg" height="35"></a>

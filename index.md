@@ -1,9 +1,3 @@
-## by Ties van der Heijden (HKV, TU Delft) and Jorn Baayen (KISTERS)
-
-<a href="https://tudelft.nl"><img src="images/TUDelft.svg" height="35"></a>
-&nbsp;&nbsp;
-<a href="https://water.kisters.de/en"><img src="images/KISTERS.svg" height="20"></a>
-
 ### Introduction
 
 KISTERS RTO and RTC-Tools 2 both use [homotopy continuation](https://arxiv.org/abs/1801.06507) to find optimal
@@ -68,3 +62,10 @@ of optimality performance.  The superior solution quality coming from RTO is a c
 
 RTC-Tools 2 could be improved if its shallow water discretizations were to be brought in sync with the theoretical results on global optimality, and would benefit in terms of computation time if IPOPT were to be replaced with KISTERS Gorilla as its underlying optimization engine.
 
+### Authors
+
+Ties van der Heijden (HKV, TU Delft) and Jorn Baayen (KISTERS) carried out this benchmark.
+
+<a href="https://tudelft.nl"><img src="images/TUDelft.svg" height="35"></a>
+&nbsp;&nbsp;
+<a href="https://water.kisters.de/en"><img src="images/KISTERS.svg" height="20"></a>

@@ -60,8 +60,6 @@ For realistic problems, RTO is more than **10 times faster**  than RTC-Tools 2 (
 As of this writing, KISTERS RTO is vastly superior to RTC-Tools 2 both in terms of computation time, and in terms
 of optimality performance.  The superior solution quality coming from RTO is a consequence of a careful implementation of the [path-stable](https://arxiv.org/abs/1801.06507) shallow water discretization.  The superior solution times are largely due to the use of the highly parallelized KISTERS Gorilla NLP solver.
 
-RTC-Tools 2 could be improved if its shallow water discretizations were to be brought in sync with the theoretical results on global optimality, and would benefit in terms of computation time if IPOPT were to be replaced with KISTERS Gorilla as its underlying optimization engine.
-
 ### Authors
 
 Ties van der Heijden (HKV, TU Delft) and Jorn Baayen (KISTERS) carried out this benchmark.

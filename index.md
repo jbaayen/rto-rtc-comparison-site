@@ -23,7 +23,7 @@ solutions:
 
 ### Benchmark setup
 
-We consider a single river reach, with a fixed upstream inflow boundary condition, and an adjustable downstream boundary condition.  The single river reach is discretized using *n* level nodes.  The number of level nodes is varied on a binary scale between 16 and 256 in this benchmark.
+We consider a single river reach, with a fixed upstream inflow boundary condition, and an adjustable downstream boundary condition.  Hydraulic and control time steps are fixed at 5 minutes.  The single river reach is discretized using *n* level nodes.  The number of level nodes is varied on a binary scale between 16 and 256 in this benchmark.
 
 <div align="center">
 <img src="images/grid.png" height="100px">

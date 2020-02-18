@@ -33,7 +33,7 @@ The characteristics of the reach and the boundary conditions are identical to th
 
 The benchmark problem is single-objective.  The objective is to keep the up- and downstream water levels as close as possible to a reference water level of 0 m above datum.
 
-Solver tolerances were set to identical values (infinity norm of Lagrangian below 10<sup>-3</sup>).  RTC-Tools was configured to use the [HSL](http://www.hsl.rl.ac.uk/ipopt/) MA57 linear solver.
+Solver tolerances were set to identical values (infinity norm of Lagrangian gradient below 10<sup>-3</sup>).  RTC-Tools was configured to use the [HSL](http://www.hsl.rl.ac.uk/ipopt/) MA57 linear solver.
 
 For every result, three optimizations were run.  RTC-Tools compiles a model into C code and then a shared library on first run, which consumes time.  Therefore, the first optimization run results were discarded.  The reported results are the averages of the second and third runs.
 

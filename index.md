@@ -7,7 +7,7 @@ against each other.
 ### Technical comparison
 
 We begin by presenting a summary overview comparing the primary characteristics of the two optimization
-solutions:
+solutions.  The table covers applications to the real-time optimization of surface water systems modelled using the Saint-Venant equations.
 
 |                                  | RTC-Tools 2.3.3           | KISTERS RTO  |
 | -------------------------------- |:--------------|:------|

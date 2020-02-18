@@ -9,7 +9,7 @@ against each other.
 We begin by presenting a summary overview comparing the primary characteristics of the two optimization
 solutions:
 
-|                                  | RTC-Tools 2.3.2           | KISTERS RTO  |
+|                                  | RTC-Tools 2.3.3           | KISTERS RTO  |
 | -------------------------------- |:--------------|:------|
 | Modelling paradigm               | Modelica | KISTERS Network Store |
 | Optimization solver              | IPOPT inside continuation loop     |  KISTERS Gorilla |
@@ -33,6 +33,8 @@ The characteristics of the reach and the boundary conditions are identical to th
 
 The benchmark problem is single-objective.  The objective is to keep the up- and downstream water levels as close as possible to a reference water level of 0 m above datum.
 
+Solver tolerances were set to identical values (infinity norm of Lagrangian below 10<sup>-3</sup>).
+
 For every result, three optimizations were run.  RTC-Tools compiles a model into C code and then a shared library on first run, which consumes time.  Therefore, the first optimization run results were discarded.  The reported results are the averages of the second and third runs.
 
 In order to make a fair comparison, GPU acceleration features of RTO / Gorilla were disabled.  The hardware used
@@ -49,7 +51,7 @@ For an optimization package to perform well on a more complex problem, it also n
 ### Results
 
 If we plot objective function values against the number of water level discretization points, 
-we see straight away that RTC-Tools 2.3.2 does *not* find global optima (lower values are better):
+we see straight away that RTC-Tools 2.3.3 does *not* find global optima (lower values are better):
 
 <div align="center">
 <img src="images/perf.svg">

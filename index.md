@@ -33,12 +33,18 @@ The characteristics of the reach and the boundary conditions are identical to th
 
 The benchmark problem is single-objective.  The objective is to keep the up- and downstream water levels as close as possible to a reference water level of 0 m above datum.
 
-This is a simple setup.  It is, however, an "atom" of every surface water problem.  Every surface water problem -- if it is modelled hydraulically -- contains one or more river or canal reaches for which a water level range must be maintained.  Hydro power cascades and canal networks are typical examples of systems that include at least one reach.
-
 For every result, three optimizations were run.  RTC-Tools compiles a model into C code and then a shared library on first run, which consumes time.  Therefore, the first optimization run results were discarded.  The reported results are the averages of the second and third runs.
 
 In order to make a fair comparison, GPU acceleration features of RTO / Gorilla were disabled.  The hardware used
 was a 2015 Apple MacBook Pro with 2.9 GHz Dual-Core Intel Core i5 CPU and 16 GB of RAM.
+
+### Motivation
+
+This is a simple setup.  It is, however, a subproblem of every more complex surface water problem.  Every surface water problem &mdash; if it is modelled hydraulically &mdash; contains one or more river or canal reaches for which a water level range must be maintained.  Hydro power cascades and canal networks are typical examples of systems that include at least one reach.
+
+Furthermore, a water level range objective is only interesting when it is active, i.e., when violations from a lower or upper level are minimized.  This is the situation that we represent here, in simplified form, when we penalize quadratic deviations from a target water level.  The simplified representation has the advantage that it is independent of the exact implementation of water level range objectives.
+
+For an optimization package to perform well on a more complex problem, it also needs to perform well on its constituent subproblems.  It is for this reason that we consider our simple setup to be the essential benchmark for a hydraulic optimization package.
 
 ### Results
 

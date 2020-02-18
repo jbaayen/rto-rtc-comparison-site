@@ -23,7 +23,7 @@ solutions.  The table covers applications to the real-time optimization of surfa
 
 ### Benchmark setup
 
-We consider a single river reach, with a fixed upstream inflow boundary condition, and an adjustable downstream boundary condition.  Hydraulic and control time steps are fixed at 5 minutes.  The single river reach is discretized using *n* level nodes.  The number of level nodes is varied on a binary scale between 16 and 256 in this benchmark.
+We consider a single river reach, with a fixed upstream inflow boundary condition, and an adjustable downstream boundary condition.  Hydraulic and control time steps are fixed at 5 minutes.  The single river reach is discretized using *n* level nodes.  The number of level nodes is varied on a binary scale between 16 and 512 in this benchmark.
 
 <div align="center">
 <img src="images/grid.png" height="100px">
@@ -75,3 +75,7 @@ As of this writing, KISTERS RTO outperforms RTC-Tools 2 both in terms of computa
 ### Authors
 
 Ties van der Heijden (HKV, PhD candidate at TU Delft) and Jorn Baayen (KISTERS) carried out this benchmark.
+
+### Source code
+
+The RTO and RTC-Tools configurations used for this benchmark are available on request.

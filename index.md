@@ -9,13 +9,12 @@ against each other.
 We begin by presenting a summary overview comparing the primary characteristics of the two optimization
 solutions.  The table covers applications to the real-time optimization of surface water systems modelled using the Saint-Venant equations.
 
-|                                  | RTC-Tools 2.3.3           | KISTERS RTO  |
+|                                  | RTC-Tools 2.3.3 / Channel Flow 1.1.0          | KISTERS RTO  |
 | -------------------------------- |:--------------|:------|
 | Modelling paradigm               | Modelica | KISTERS Network Store |
 | Optimization solver              | IPOPT inside continuation loop     |  KISTERS Gorilla |
 | Parallelization on CPU | Basic | Extensive (*patent pending*) |
 | Parallelization on GPU | No | Optional (*patent pending*) |
-| Globally optimal solutions       | No                                      | Yes |
 | Globally optimal goal programming          | No                                                                                    |   Yes (*patent pending*) |
 | Convergence guarantees           | No (*bound violations resulting in infeasibilities, IPOPT restoration phase failures*) | Yes  |
 | Open source   | Yes | No |
@@ -50,17 +49,11 @@ For an optimization package to perform well on a more complex problem, it also n
 
 ### Results
 
-If we plot objective function values against the number of water level discretization points, 
-we see straight away that RTC-Tools 2.3.3 does *not* find global optima (lower values are better):
+First of all, we note that &mdash; after taking care to set up an appropriate scaling in RTC-Tools &mdash; both RTC-Tools and RTO converge to the same solution with an objective value of approximately 2 × 10<sup>3</sup> m<sup>2</sup>.  
 
-<div align="center">
-<img src="images/perf.svg">
-</div>
+This is despite the fact that the RTC-Tools Channel Flow [shallow water discretization](https://gitlab.com/deltares/rtc-tools-channel-flow/-/blob/29906a7f7eb76edabd8d3d9b068374dc0de84a55/src/rtctools_channel_flow/modelica/Deltares/ChannelFlow/Hydraulic/Branches/Internal/PartialHomotopic.mo) is not synchronized with the [theory](https://arxiv.org/abs/1801.06507).  Because of this, constraints may become linearly dependent, at which point regularization heuristics are activated in [IPOPT](https://github.com/coin-or/Ipopt).
 
-This most likely due to the fact that the RTC-Tools Channel Flow [shallow water discretization](https://gitlab.com/deltares/rtc-tools-channel-flow/-/blob/29906a7f7eb76edabd8d3d9b068374dc0de84a55/src/rtctools_channel_flow/modelica/Deltares/ChannelFlow/Hydraulic/Branches/Internal/PartialHomotopic.mo) is not synchronized with the [theory](https://arxiv.org/abs/1801.06507).
-Because of this, constraints may become linearly dependent, at which point regularization heuristics are activated in [IPOPT](https://github.com/coin-or/Ipopt).
-
-Secondly, we note that RTO consistently outperforms RTC-Tools 2 in terms of computation time:
+Secondly, we note that RTO consistently outperforms RTC-Tools 2 in terms of computation time (note the logarithmic scales):
 
 <div align="center">
 <img src="images/wall_time.svg">
@@ -70,7 +63,7 @@ For realistic problems, RTO is more than **10 times faster**  than RTC-Tools 2 (
 
 ### Conclusions
 
-As of this writing, KISTERS RTO outperforms RTC-Tools 2 both in terms of computation time and optimality performance.  The high solution quality coming from RTO is a consequence of a careful implementation of the [path-stable](https://arxiv.org/abs/1801.06507) shallow water discretization.  The high computational performance is largely due to the use of the parallelized KISTERS Gorilla NLP solver.
+For realistic problems, RTO is more than **10 times faster**  than RTC-Tools 2.  The high computational performance is largely due to the use of the parallelized KISTERS Gorilla NLP solver.
 
 ### Authors
 

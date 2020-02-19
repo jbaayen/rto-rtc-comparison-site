@@ -53,7 +53,7 @@ For an optimization package to perform well on a more complex problem, it also n
 
 First of all, we note that &mdash; after taking care to set up an appropriate scaling in RTC-Tools &mdash; both RTC-Tools and RTO converge to the same solution with an objective value of approximately 2 × 10<sup>3</sup> m<sup>2</sup>.  
 
-Secondly, we note that RTO consistently outperforms RTC-Tools 2 in terms of computation time (note the logarithmic scales):
+Secondly, we note that KISTERS RTO consistently outperforms RTC-Tools 2 in terms of computation time (note the logarithmic scales):
 
 <div align="center">
 <img src="images/wall_time.svg">
@@ -61,7 +61,7 @@ Secondly, we note that RTO consistently outperforms RTC-Tools 2 in terms of comp
 
 ### Conclusions
 
-For realistic problems, RTO is more than **10 times faster**  than RTC-Tools 2.  The high computational performance is largely due to the use of the parallelized KISTERS Gorilla NLP solver.
+For realistic problems, KISTERS RTO is more than **10 times faster**  than RTC-Tools 2.  The high computational performance is largely due to the use of the parallelized KISTERS Gorilla NLP solver.
 
 ### Authors
 

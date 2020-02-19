@@ -51,7 +51,7 @@ For an optimization package to perform well on a more complex problem, it also n
 
 First of all, we note that &mdash; after taking care to set up an appropriate scaling in RTC-Tools &mdash; both RTC-Tools and RTO converge to the same solution with an objective value of approximately 2 × 10<sup>3</sup> m<sup>2</sup>.  
 
-This is despite the fact that the RTC-Tools Channel Flow [shallow water discretization](https://gitlab.com/deltares/rtc-tools-channel-flow/-/blob/29906a7f7eb76edabd8d3d9b068374dc0de84a55/src/rtctools_channel_flow/modelica/Deltares/ChannelFlow/Hydraulic/Branches/Internal/PartialHomotopic.mo) is not synchronized with the [theory](https://arxiv.org/abs/1801.06507).  Because of this, constraints may become linearly dependent, at which point regularization heuristics are activated in [IPOPT](https://github.com/coin-or/Ipopt).
+This is despite the fact that the RTC-Tools Channel Flow [shallow water discretization](https://gitlab.com/deltares/rtc-tools-channel-flow/-/blob/29906a7f7eb76edabd8d3d9b068374dc0de84a55/src/rtctools_channel_flow/modelica/Deltares/ChannelFlow/Hydraulic/Branches/Internal/PartialHomotopic.mo) is not synchronized with the [theory](https://arxiv.org/abs/1801.06507).  Because of this, constraints may become linearly dependent, at which point regularization heuristics are activated in [IPOPT](https://github.com/coin-or/Ipopt).  Similar linear dependence problems can occur when connecting multiple branches in RTC-Tools.
 
 Secondly, we note that RTO consistently outperforms RTC-Tools 2 in terms of computation time (note the logarithmic scales):
 

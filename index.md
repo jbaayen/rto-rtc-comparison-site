@@ -59,8 +59,6 @@ Secondly, we note that RTO consistently outperforms RTC-Tools 2 in terms of comp
 <img src="images/wall_time.svg">
 </div>
 
-For realistic problems, RTO is more than **10 times faster**  than RTC-Tools 2 (note the logarithmic plot axes).   This large difference is mostly due to the use of the KISTERS Gorilla non-convex optimization solver.
-
 ### Conclusions
 
 For realistic problems, RTO is more than **10 times faster**  than RTC-Tools 2.  The high computational performance is largely due to the use of the parallelized KISTERS Gorilla NLP solver.

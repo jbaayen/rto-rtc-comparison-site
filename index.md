@@ -61,11 +61,11 @@ Secondly, we note that KISTERS RTO consistently outperforms RTC-Tools 2 in terms
 
 ### Conclusions
 
-For realistic problems, KISTERS RTO is more than **10 times faster**  than RTC-Tools 2.  The high computational performance is largely due to the use of the parallelized KISTERS Gorilla NLP solver.
+For realistic problems, KISTERS RTO is more than **10 times faster**  than RTC-Tools 2.  The high computational performance is largely due to the use of the parallelized KISTERS Gorilla NLP solver with its built-in support for homotopy continuation.
 
 ### Authors
 
-Ties van der Heijden (HKV, PhD candidate at TU Delft) and Jorn Baayen (KISTERS) carried out this benchmark.
+Jorn Baayen (KISTERS) and Ties van der Heijden (HKV, PhD candidate at TU Delft) carried out this benchmark.
 
 ### Source code
 
